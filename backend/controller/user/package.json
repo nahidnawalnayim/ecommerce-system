@@ -1,0 +1,22 @@
+{
+  "name": "user",
+  "version": "1.0.0",
+  "description": "",
+  "main": "UserController.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.1.0",
+    "nodemon": "^2.0.22",
+    "validator": "^13.9.0"
+  }
+}
