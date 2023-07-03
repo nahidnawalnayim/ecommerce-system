@@ -3,6 +3,10 @@ const connectDatabase = require("./db/Database.js");
 const cloudinary = require("cloudinary");
 const conn=require("./mysql")
 var mysql = require('mysql')
+
+//redis database server
+
+
 // Handling uncaught Exception
 process.on("uncaughtException",(err) =>{
     console.log(`Error: ${err.message}`);

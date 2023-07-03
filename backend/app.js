@@ -11,6 +11,40 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true,limit:"50mb"}));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(fileUpload({useTempFiles: true}));
+//redis db
+const axios = require('axios');
+const { getCache, setCache } = require('./caching');
+//const app = express();
+
+//const { BASE_URL } = process.env;
+const cacheKey = `getAll/`;
+
+//Middleware
+app.use(bodyParser.json());
+
+//GET Posts
+app.get('/getAll', async (req, res, next) => {
+    try{
+        const response = {};
+        const cacheData = await getCache(cacheKey);
+        if(cacheData) {
+            response['message'] = 'cache hit';
+            response['posts'] = JSON.parse(cacheData);
+        }else {
+            const result = await axios.get("http://localhost:4000");
+            const { data } = result;
+            response['message'] = 'cache miss';
+            response['posts'] = data;
+            setCache(cacheKey, data);
+        }
+        res.status(200).send(response);
+    }catch(err) {
+        res.status(400).send(err);
+    }
+   
+})
+
+
 
 // config
 if(process.env.NODE_ENV!=="PRODUCTION"){
