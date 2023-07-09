@@ -27,9 +27,14 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 })
 
+app.get('/',(req,res)=>{
+    res.send("hello from MAIN APP")
+  })
+  
+
 // create server
-const server = app.listen(process.env.PORT,() =>{
-    console.log(`Server is working on http://localhost:${process.env.PORT}`)
+const server = app.listen(4000,() =>{
+    console.log(`Server is working on http://localhost:4000`)
 })
 
 

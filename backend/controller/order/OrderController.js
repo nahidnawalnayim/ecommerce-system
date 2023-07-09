@@ -4,7 +4,7 @@ const catchAsyncErrors = require("../../middleware/catchAsyncErrors");
 const Product = require("../../models/ProductModel");
 const express=require("express");
 const app = express();
-// Create Order
+//Create Order
 exports.createOrder = catchAsyncErrors(async (req,res,next) =>{
 
     const {
@@ -135,7 +135,7 @@ exports.deleteOrder = catchAsyncErrors(async (req,res,next) =>{
 });
 
 
-app.get('/orderapp',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send("hello from orderapp")
 })
 

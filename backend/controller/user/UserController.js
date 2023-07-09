@@ -297,7 +297,7 @@ exports.deleteUser = catchAsyncErrors(async(req,res,next) =>{
     })
 });
 
-app.get('/userapp',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send("hello from userapp")
 })
 

@@ -253,7 +253,7 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
 });
 
 // 
-app.get('/productapp',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send("hello from productapp")
 })
 

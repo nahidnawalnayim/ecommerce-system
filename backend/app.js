@@ -22,7 +22,7 @@ const cacheKey = `getAll/`;
 //Middleware
 app.use(bodyParser.json());
 
-//GET Posts
+//REDIS DATABASE SERVER
 app.get('/getAll', async (req, res, next) => {
     try{
         const response = {};
@@ -68,6 +68,9 @@ app.use("/api/v2",order);
 app.use("/api/v2",payment);
 
 app.use("/api/v2",cart);
+
+
+
 
 app.use(express.static(path.join(__dirname,"../frontend/build")));
 

@@ -15,7 +15,7 @@ const db = mysql.createConnection({
     password: "",
     database: "thesis",
   });
-exports.createOrder = catchAsyncErrors(async (req,res,next) =>{
+exports.createOrderSQL = catchAsyncErrors(async (req,res,next) =>{
 
     const {
         shippingInfo,
@@ -51,7 +51,7 @@ exports.createOrder = catchAsyncErrors(async (req,res,next) =>{
 //     }
 //   );
 
-//  Get Single order
+ //Get Single order
 // exports.getSingleOrder = catchAsyncErrors(async (req,res,next) =>{
 //     const order = await Order.findById(req.params.id).populate(
 //         "user",
@@ -151,10 +151,10 @@ exports.createOrder = catchAsyncErrors(async (req,res,next) =>{
 // });
 
 
-app.get('/orderapp',(req,res)=>{
-  res.send("hello from orderapp")
+app.get('/ordersql',(req,res)=>{
+  res.send("hello from ordersql")
 })
 
-app.listen(4002,()=>{
+app.listen(9000,()=>{
   console.log("cart app started");
 })

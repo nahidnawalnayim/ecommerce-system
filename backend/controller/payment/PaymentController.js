@@ -21,7 +21,7 @@ exports.sendStripeApiKey = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({ stripeApiKey: process.env.STRIPE_API_KEY });
 });
 
-app.get('/paymentapp',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send("hello from paymentapp")
 })
 

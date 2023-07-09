@@ -125,7 +125,7 @@ exports.removeCartData = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-app.get('/cartapp',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send("hello from cart")
 })
 
